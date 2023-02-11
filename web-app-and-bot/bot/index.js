@@ -11,8 +11,21 @@ bot.on('message', async (msg) => {
   } = msg;
 
   if (text === '/start') {
-    await bot.sendMessage(chatId, 'Fill the form', {
-      reply_markup: { keyboard: [[{ text: 'Fill the form' }]] },
-    });
+    await bot.sendMessage(
+      chatId,
+      'Press WebApp button 🤗 or press button below',
+      {
+        reply_markup: {
+          inline_keyboard: [
+            [
+              {
+                text: 'Open WebApp',
+                web_app: { url: 'https://chic-caramel-3ac2c3.netlify.app/' },
+              },
+            ],
+          ],
+        },
+      }
+    );
   }
 });
